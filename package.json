@@ -10,7 +10,8 @@
     "build": "turbo run build --scope web-client --scope nest-server ",
     "dev": "turbo run dev --scope web-client --scope nest-server ",
     "lint": "turbo run lint --scope web-client --scope nest-server",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\" --scope web-client --scope nest-server"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\" --scope web-client --scope nest-server ",
+    "test": "turbo run test"
   },
   "devDependencies": {
     "eslint-config-custom": "*",

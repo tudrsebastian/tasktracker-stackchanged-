@@ -1,0 +1,32 @@
+image: node:latest
+# To use Remote Caching, uncomment the next lines and follow the steps below.
+# variables:
+#   TURBO_TOKEN: $TURBO_TOKEN
+#   TURBO_TEAM: $TURBO_TEAM
+stages:
+  - build
+  - lint-server
+  - lint-client
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+
+Lint-Client:
+  stage: lint-client
+  script:
+    - npm install
+    - npm run web-client-lint
+  rules:
+    - changes:
+        - apps/web-client/*
+
+Lint-Server:
+  stage: lint-server
+  script:
+    - npm install
+    - npm run nest-server-lint
+  rules:
+    - changes:
+        - apps/nest-server/*
