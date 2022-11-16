@@ -7,10 +7,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "build": "turbo run build --scope web-client --scope nest-server ",
+    "dev": "turbo run dev --scope web-client --scope nest-server ",
+    "lint": "turbo run lint --scope web-client --scope nest-server",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\" --scope web-client --scope nest-server"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
